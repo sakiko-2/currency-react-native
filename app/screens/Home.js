@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { View, StatusBar } from 'react-native';
+import { KeyboardAvoidingView, StatusBar } from 'react-native';
 
 import { Container } from '../components/Container';
 import { Logo } from '../components/Logo';
@@ -56,7 +56,7 @@ class Home extends Component {
           keyboardType='numeric'
           editable={false}
         />
-        <View />
+        <KeyboardAvoidingView />
         <LastConverted
           base={TEMP_BASE_CURRENCY}
           quote={TEMP_QUOTE_CURRENCY}
