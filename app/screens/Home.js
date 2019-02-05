@@ -6,6 +6,7 @@ import { Logo } from '../components/Logo';
 import { InputWithButton } from '../components/TextInput';
 import { ClearButton } from '../components/Button';
 import { LastConverted } from '../components/Text';
+import { Header } from '../components/Header';
 
 const TEMP_BASE_CURRENCY = 'NZD';
 const TEMP_QUOTE_CURRENCY = 'JPY';
@@ -31,10 +32,15 @@ class Home extends Component {
     console.log('press reverse currency');
   };
 
+  handleOptionsPress = () => {
+    console.log('press options');
+  };
+
   render() {
     return (
       <Container>
         <StatusBar translucent={false} barStyle='light-content' />
+        <Header onPress={this.handleOptionsPress} />
         <Logo />
         <InputWithButton
           buttonText={TEMP_BASE_CURRENCY}
