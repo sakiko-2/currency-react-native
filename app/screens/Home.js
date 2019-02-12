@@ -1,6 +1,7 @@
 import { PropTypes } from 'prop-types';
 import React, { Component } from 'react';
 import { KeyboardAvoidingView, StatusBar } from 'react-native';
+import { connect } from 'react-redux';
 
 import { Container } from '../components/Container';
 import { Logo } from '../components/Logo';
@@ -8,6 +9,7 @@ import { InputWithButton } from '../components/TextInput';
 import { ClearButton } from '../components/Button';
 import { LastConverted } from '../components/Text';
 import { Header } from '../components/Header';
+import { reverseCurrency, changeCurrencyAmount } from '../actions/currencies';
 
 const TEMP_BASE_CURRENCY = 'NZD';
 const TEMP_QUOTE_CURRENCY = 'JPY';
@@ -29,12 +31,12 @@ class Home extends Component {
     this.props.navigation.navigate('CurrencyList', { title: 'Quote Currency' });
   };
 
-  handleTextchange = (text) => {
-    console.log('text change', text);
+  handleTextChange = (text) => {
+    this.props.dispatch(changeCurrencyAmount(text));
   };
 
   handleReverseCurrency = () => {
-    console.log('press reverse currency');
+    this.props.dispatch(reverseCurrency());
   };
 
   handleOptionsPress = () => {
@@ -52,7 +54,7 @@ class Home extends Component {
           onPress={this.handlePressBaseCurrency}
           defaultValue={TEMP_BASE_PRICE}
           keyboardType='numeric'
-          onChangeText={this.handleTextchange}
+          onChangeText={this.handleTextChange}
         />
         <InputWithButton
           buttonText={TEMP_QUOTE_CURRENCY}
@@ -78,4 +80,4 @@ class Home extends Component {
   };
 };
 
-export default Home;
+export default connect()(Home);
