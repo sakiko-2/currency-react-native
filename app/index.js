@@ -20,6 +20,6 @@ EStyleSheet.build({
 
 export default () => (
   <Provider store={store}>
-    <Navigator />
+    <Navigator onNavigationStateChange={null} />
   </Provider>
 );
