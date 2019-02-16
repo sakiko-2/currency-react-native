@@ -18,6 +18,11 @@ const InputWithButton = (props) => {
     containerStyles.push(styles.containetDisabled);
   }
 
+  const buttonTextStyles = [styles.buttonText];
+  if (props.textColor) {
+    buttonTextStyles.push({ color: props.textColor });
+  }
+
   return (
     <View style={containerStyles} >
       <TouchableHighlight
@@ -25,7 +30,7 @@ const InputWithButton = (props) => {
         onPress={onPress}
         style={styles.buttonContainer}
       >
-        <Text style={styles.buttonText}>{buttonText}</Text>
+        <Text style={buttonTextStyles}>{buttonText}</Text>
       </TouchableHighlight>
       <View style={styles.border} />
       <TextInput style={styles.input} underlineColorAndroid='transparent' {...props} />
@@ -38,6 +43,7 @@ InputWithButton.propTypes = {
   onPress: PropTypes.func,
   buttonText: PropTypes.string,
   editable: PropTypes.bool,
+  textColor: PropTypes.string,
 };
 
 export default InputWithButton;
