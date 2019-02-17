@@ -33,7 +33,7 @@ class Themes extends Component {
 
         <ListItem
           text='Blue'
-          handleThemePress={this.handleThemePress(styles.$blue)}
+          onPress={() => this.handleThemePress(styles.$blue)}
           checkmark={false}
           selected
           iconBackground={styles.$blue}
@@ -41,7 +41,7 @@ class Themes extends Component {
         <Separator />
         <ListItem
           text='Yellow'
-          handleThemePress={this.handleThemePress(styles.$yellow)}
+          onPress={() => this.handleThemePress(styles.$yellow)}
           checkmark={false}
           selected
           iconBackground={styles.$yellow}
@@ -49,7 +49,7 @@ class Themes extends Component {
         <Separator />
         <ListItem
           text='Pink'
-          handleThemePress={this.handleThemePress(styles.$pink)}
+          onPress={() => this.handleThemePress(styles.$pink)}
           checkmark={false}
           selected
           iconBackground={styles.$pink}
@@ -57,7 +57,7 @@ class Themes extends Component {
         <Separator />
         <ListItem
           text='Green'
-          handleThemePress={this.handleThemePress(styles.$green)}
+          onPress={() => this.handleThemePress(styles.$green)}
           checkmark={false}
           selected
           iconBackground={styles.$green}
@@ -65,7 +65,7 @@ class Themes extends Component {
         <Separator />
         <ListItem
           text='Purple'
-          handleThemePress={this.handleThemePress(styles.$purple)}
+          onPress={() => this.handleThemePress(styles.$purple)}
           checkmark={false}
           selected
           iconBackground={styles.$purple}
