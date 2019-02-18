@@ -9,8 +9,6 @@ import { changePrimaryColor } from '../actions/theme';
 
 const styles = EStyleSheet.create({
   $blue: '$primaryBlue',
-  $pink: '$primaryPink',
-  $purple: '$primaryPurple',
   $green: '$primaryGreen',
   $yellow: '$primaryYellow',
 });
@@ -48,14 +46,6 @@ class Themes extends Component {
         />
         <Separator />
         <ListItem
-          text='Pink'
-          onPress={() => this.handleThemePress(styles.$pink)}
-          checkmark={false}
-          selected
-          iconBackground={styles.$pink}
-        />
-        <Separator />
-        <ListItem
           text='Green'
           onPress={() => this.handleThemePress(styles.$green)}
           checkmark={false}
@@ -63,13 +53,6 @@ class Themes extends Component {
           iconBackground={styles.$green}
         />
         <Separator />
-        <ListItem
-          text='Purple'
-          onPress={() => this.handleThemePress(styles.$purple)}
-          checkmark={false}
-          selected
-          iconBackground={styles.$purple}
-        />
         <Separator />
       </ScrollView>
     );
