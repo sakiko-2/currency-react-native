@@ -19,7 +19,7 @@ class Options extends Component {
   };
 
   handleSitePress = () => {
-    Linking.openURL('https://fixer.io').catch(() => alert('An error occured'));
+    Linking.openURL('http://exchangeratesapi.io').catch(() => alert('An error occured'));
   };
 
   render() {
@@ -35,7 +35,7 @@ class Options extends Component {
         />
         <Separator />
         <ListItem
-          text='Fixer.io'
+          text='Exchange Rates API'
           onPress={this.handleSitePress}
           customIcon={
             <Ionicons name={`${ICON_PREFIX}-link`} color={ICON_COLOR} size={ICON_SIZE} />
